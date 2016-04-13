@@ -26,3 +26,15 @@ function lastChar(string) {
 };
 lastChar("Albert");
 
+
+// Write a function that takes a string and a number, and returns the character at the position represented by the number. The indexing of number should start at 0. Test your function on a few inputs, including the empty string.
+
+function numberedChar(string, num) {
+    if(string && num <= string.length - 1) {
+        console.log(string.charAt(num));
+    }
+    else {
+        console.log("enter a string and a smaller number");
+    }
+};
+numberedChar("George", 4 );
