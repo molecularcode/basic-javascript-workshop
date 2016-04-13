@@ -14,7 +14,7 @@ function firstChar(string) {
 //console.log(firstChar("Fred"));
 
 
-// Write a function that takes a string and returns the last character of a string. Test your function on a few inputs, including the empty string.
+// 2. Write a function that takes a string and returns the last character of a string. Test your function on a few inputs, including the empty string.
 
 function lastChar(string) {
     if(string) {
@@ -27,7 +27,7 @@ function lastChar(string) {
 //console.log(lastChar("Albert"));
 
 
-// Write a function that takes a string and a number, and returns the character at the position represented by the number. The indexing of number should start at 0. Test your function on a few inputs, including the empty string.
+// 3. Write a function that takes a string and a number, and returns the character at the position represented by the number. The indexing of number should start at 0. Test your function on a few inputs, including the empty string.
 
 function numberedChar(string, num) {
     if(string && num <= string.length - 1) {
@@ -40,14 +40,27 @@ function numberedChar(string, num) {
 //console.log(numberedChar("George", 4 ));
 
 
-// Write a function that takes two numbers and adds them together. Test your function on a few inputs. Write in the comments what happens when you pass something other than a number to your function.
+// 4. Write a function that takes two numbers and adds them together. Test your function on a few inputs. Write in the comments what happens when you pass something other than a number to your function.
 
 function add(num1, num2) {
-    if(typeof num1 === "number" && typeof num2 === "number") {
+    if(typeof num1 === "number" && typeof num2 === "number") { // when passed something other than type number, the user is prompted to enter 2 numbers
         return(num1 + num2);
     }
     else {
         return("enter two numbers");
     }
 };
-console.log(add(5, 4));
+//console.log(add("greoge", 4));
+
+
+// 5. Write a function that takes two numbers and multiplies them together. Test your function on a few inputs. Write in your comments what happens when you pass something other than a number to your function.
+
+function multiply(num1, num2) {
+    if(typeof num1 === "number" && typeof num2 === "number") { // when passed something other than 2 variables of type number, the user is prompted to enter 2 numbers
+        return(num1 * num2);
+    }
+    else {
+        return("enter two numbers");
+    }
+};
+console.log(multiply(5, 8));
