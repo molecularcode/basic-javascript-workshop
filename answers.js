@@ -142,4 +142,27 @@ function factorial(num) {
         return("enter a number");
     }
 }
-console.log(factorial(5));
+//console.log(factorial(5));
+
+
+// 10. Write a function that takes a phrase as a string, and returns the longest word in that phrase. If the phrase contains more than one such word, return the first occurrence. Test your function on a few inputs.
+
+function length(phrase) {
+    /* when passed something other than a variable of type string, the user is prompted to enter a valid string */
+    if(typeof phrase === "string") {
+        var wordArray = phrase.split(" ");
+        var wordArrayLength = wordArray.length;
+        var longest = " ";
+        for(var i = 0; i < wordArrayLength; i++) {
+            var current = (wordArray[i]);
+            if(current.length > longest.length) {
+                longest = current;
+            }
+        }
+        return longest;
+    }
+    else {
+        return("enter a phrase");
+    }
+}
+console.log(length("It is a good day to have a really good day"));
