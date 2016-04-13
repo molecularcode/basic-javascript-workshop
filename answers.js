@@ -211,4 +211,20 @@ function largestNum(myArray) {
 }
 
 var mixedArray = ["hi", 8, 2, true, "something", 42];
-console.log(largestNum(mixedArray));
+//console.log(largestNum(mixedArray));
+
+// 13. Write a function that takes an array, and returns a filtered array. The filtered array should only contain the truthy values from the initial array. Hint: there is an array method called filter that can help you with this :)
+
+function isTruthy(myArray) {    
+    /* when passed something other than a variable of type array, the user is prompted to enter a valid array */
+    if(Array.isArray(myArray)) {
+        var truthyArray = myArray.filter(Boolean);
+        return truthyArray;
+    }
+    else {
+        return("pass in an array");
+    }
+}
+
+var falseyArray = [null, "hi", 8, NaN, 2, true, "something", undefined, 42];
+console.log(isTruthy(falseyArray));
