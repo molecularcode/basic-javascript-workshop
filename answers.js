@@ -91,4 +91,23 @@ function math(num1, num2, opperator) {
         return("enter two numbers followed by the opperator (add, subtract, mult, div) as csv");
     }
 };
-console.log(math(12, 4, "mult"));
+//console.log(math(12, 4, "mult"));
+
+
+// 7. Write a function that takes a string and a number, and returns the string repeated that many number of times. Test your function with various inputs.
+
+function stringLoop(num, string) {
+    /* when passed something other than a variable of type number followed by a variable of type string, the user is prompted to enter a number followed by a string */
+    if(typeof num === "number" && typeof string === "string") {
+        var i = 0;
+        while(i < num ) {
+            var loop = (string + "\n" + loop);
+            i ++;
+        }
+        return(loop);
+    }
+    else {
+        return("enter a number followed by a string as csv");
+    }
+}
+console.log(stringLoop(2, "Oh Happy Days!"));
