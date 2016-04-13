@@ -110,4 +110,18 @@ function stringLoop(num, string) {
         return("enter a number followed by a string as csv");
     }
 }
-console.log(stringLoop(2, "Oh Happy Days!"));
+//console.log(stringLoop(2, "Oh Happy Days!"));
+
+
+// 8. Write a function that takes a string, and returns the reverse of that string. For example, if you pass the function the string “hello”, it should return “olleh”. Test your function on a few inputs, including the empty string.
+
+function reverse(sentence) {
+    /* when passed something other than a variable of type string, the user is prompted to enter a valid string */
+    if(typeof sentence === "string") {
+        return sentence.split(" ").reverse().join(" ");
+    }
+    else {
+        return("enter a string");
+    }
+}
+console.log(reverse("It is a good day to have a good day"));
