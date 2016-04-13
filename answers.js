@@ -124,4 +124,22 @@ function reverse(sentence) {
         return("enter a string");
     }
 }
-console.log(reverse("It is a good day to have a good day"));
+//console.log(reverse("It is a good day to have a good day"));
+
+
+// 9. Write a function that takes a number and returns the factorial of a number. The factorial of 5 is 5x4x3x2x1. The factorial of 0 is 1. Test your input on a few numbers, including negative numbers.
+
+function factorial(num) {
+    /* when passed something other than a variable of type number, the user is prompted to enter a valid number */
+    if(typeof num === "number") {
+        var runningTotal = num;
+        for(var i = num; i > 1; i--) {
+            runningTotal = runningTotal*(i-1)
+        }
+        return(runningTotal);
+    }
+    else {
+        return("enter a number");
+    }
+}
+console.log(factorial(5));
