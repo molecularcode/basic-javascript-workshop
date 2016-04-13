@@ -156,7 +156,7 @@ function length(phrase) {
         for(var i = 0; i < wordArrayLength; i++) {
             var current = (wordArray[i]); // set value of current to each element in the array
             if(current.length > longest.length) {
-                longest = current; // compate longest stored string with current string and replace if longer
+                longest = current; // compare longest stored string with current string and replace if longer
             }
         }
         return longest;
@@ -186,4 +186,29 @@ function capitalisation(phrase) {
         return("enter a phrase");
     }
 }
-console.log(capitalisation("It IS a gOOd day to have  rEally good day"));
+//console.log(capitalisation("It IS a gOOd day to have rEally good day"));
+
+
+// 12. Write a function that takes an array and returns the largest number of the array. Test your function on a few inputs.
+
+function largestNum(myArray) {
+    /* when passed something other than a variable of type array, the user is prompted to enter a valid array */
+    if(Array.isArray(myArray)) {
+        var largest = " ";
+        for(var i = 0; i < myArray.length; i++) {
+            if(typeof myArray[i] === "number") { // check if element is a number
+                var current = (myArray[i]); // set value of current to each numeric element in the array
+                if(current > largest) {
+                    largest = current; // compare largest stored number with current number and replace if longer
+                }
+            }
+        }
+        return largest;
+    }
+    else {
+        return("pass in an array");
+    }
+}
+
+var mixedArray = ["hi", 8, 2, true, "something", 42];
+console.log(largestNum(mixedArray));
