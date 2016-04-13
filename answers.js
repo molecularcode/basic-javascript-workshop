@@ -227,4 +227,20 @@ function isTruthy(myArray) {
 }
 
 var falseyArray = [null, "hi", 8, NaN, 2, true, "something", undefined, 42];
-console.log(isTruthy(falseyArray));
+//console.log(isTruthy(falseyArray));
+
+
+// 14. Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.
+
+function sumArrayNumbers() {
+    var sum = 0;
+    nums.forEach( // iterate through each position in the array
+        function addNum(value) {
+            sum += value;
+        }
+    );
+    return sum;
+}
+
+var nums = [19, 7, 3];
+console.log(sumArrayNumbers(nums));
