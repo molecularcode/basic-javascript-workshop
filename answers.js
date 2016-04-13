@@ -151,12 +151,12 @@ function length(phrase) {
     /* when passed something other than a variable of type string, the user is prompted to enter a valid string */
     if(typeof phrase === "string") {
         var wordArray = phrase.split(" ");
-        var wordArrayLength = wordArray.length;
+        var wordArrayLength = wordArray.length; // get length of array to itterate over
         var longest = " ";
         for(var i = 0; i < wordArrayLength; i++) {
-            var current = (wordArray[i]);
+            var current = (wordArray[i]); // set value of current to each element in the array
             if(current.length > longest.length) {
-                longest = current;
+                longest = current; // compate longest stored string with current string and replace if longer
             }
         }
         return longest;
@@ -165,4 +165,25 @@ function length(phrase) {
         return("enter a phrase");
     }
 }
-console.log(length("It is a good day to have a really good day"));
+//console.log(length("It is a good day to have a really good day"));
+
+
+// 11. Write a function that takes a phrase, and returns the same phrase with every word capitalized. For example, if you pass your function "hello world", it should return "Hello World" and if you pass it "HELLO WORLD" or even "HeLLo WoRLD", it will also return "Hello World". Test your function of a few inputs.
+
+function capitalisation(phrase) {
+    /* when passed something other than a variable of type string, the user is prompted to enter a valid string */
+    if(typeof phrase === "string") {
+
+        var wordArray = phrase.toLowerCase().split(" "); // maker whole string lowercase and split into array
+        
+        for(var i = 0; i < wordArray.length; i++) {
+            // set value of current to each element in the array with the first character in the string changed to uppercase
+            wordArray[i] = wordArray[i].charAt(0).toUpperCase() + wordArray[i].substring(1); 
+        }
+        return wordArray.join(" ");
+    }
+    else {
+        return("enter a phrase");
+    }
+}
+console.log(capitalisation("It IS a gOOd day to have  rEally good day"));
