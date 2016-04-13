@@ -5,36 +5,49 @@
 
 function firstChar(string) {
     if(string) {
-        console.log(string.charAt(0));
+        return(string.charAt(0));
     }
     else {
-        console.log("enter a string");
+        return("enter a string");
     }
 };
-firstChar("Fred");
+//console.log(firstChar("Fred"));
 
 
 // Write a function that takes a string and returns the last character of a string. Test your function on a few inputs, including the empty string.
 
 function lastChar(string) {
     if(string) {
-        console.log(string.slice(-1));
+        return(string.slice(-1));
     }
     else {
-        console.log("enter a string");
+        return("enter a string");
     }
 };
-lastChar("Albert");
+//console.log(lastChar("Albert"));
 
 
 // Write a function that takes a string and a number, and returns the character at the position represented by the number. The indexing of number should start at 0. Test your function on a few inputs, including the empty string.
 
 function numberedChar(string, num) {
     if(string && num <= string.length - 1) {
-        console.log(string.charAt(num));
+        return(string.charAt(num));
     }
     else {
-        console.log("enter a string and a smaller number");
+        return("enter a string and a smaller number");
     }
 };
-numberedChar("George", 4 );
+//console.log(numberedChar("George", 4 ));
+
+
+// Write a function that takes two numbers and adds them together. Test your function on a few inputs. Write in the comments what happens when you pass something other than a number to your function.
+
+function add(num1, num2) {
+    if(typeof num1 === "number" && typeof num2 === "number") {
+        return(num1 + num2);
+    }
+    else {
+        return("enter two numbers");
+    }
+};
+console.log(add(5, 4));
