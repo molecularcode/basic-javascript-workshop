@@ -232,15 +232,40 @@ var falseyArray = [null, "hi", 8, NaN, 2, true, "something", undefined, 42];
 
 // 14. Write a function that takes an array of numbers, and returns the sum of all the numbers in the array.
 
-function sumArrayNumbers() {
-    var sum = 0;
-    nums.forEach( // iterate through each position in the array
-        function addNum(value) {
-            sum += value;
-        }
-    );
-    return sum;
+function sumArrayNumbers(myArray) {
+    /* when passed something other than a variable of type array, the user is prompted to enter a valid array */
+    if(Array.isArray(myArray)) {
+        var sum = 0;
+        myArray.forEach( // iterate through each position in the array
+            function(value) {
+                sum += value;
+            }
+        );
+        return sum;
+    }
+    else {
+        return("pass in an array");
+    }
 }
 
-var nums = [19, 7, 3];
-console.log(sumArrayNumbers(nums));
+//console.log(sumArrayNumbers([19, 2, 3]));
+
+
+// 15. Write a function that takes two arrays, and returns an array of all elements that are only in one array. For example, with [1,2,3] and [1,2,4,5] the function should return [3,4,5]. Test your function on different inputs. Hint: you should look up array methods indexOf and slice.
+
+function merge(a1, a2) {
+    var a3 = [];
+    a1.forEach(function(num) {
+       if(a2.indexOf(num)===-1) {
+           a3.push(num);
+       }
+    });
+    a2.forEach(function(num) {
+       if(a1.indexOf(num)===-1) {
+           a3.push(num);
+       }
+    });
+    return a3;
+}
+
+console.log(merge([1, 2, 3], [1, 2, 4, 5]));
