@@ -4,12 +4,6 @@ Challenge: create a file called cowsay.js in your Cloud9 project. Running this f
 
 function cowSay(randQuote) {
 
-    //print(randQuote);
-    var asciiQuote =   [" _________________________",
-                        "< " + randQuote + " >",
-                        " ------------------------- "
-                    ];
-
     // Split random quote into strings of less than 30 characters, wrapping at the word level
     var quoteArray = randQuote.split(" "); // split quote sting in to an array of words
     var chunk = ""; // declare variable to hold the growing string of < 30 characters
@@ -30,14 +24,48 @@ function cowSay(randQuote) {
     });
     quoteSentenceArray.push(chunk);
     //return quoteSentenceArray.join("\n");
-
-    var asciiCow = ["        \\   ^__^",
-                    "         \\  (oo)\\_______",
-                     "            (__)\\       )\\/\\ ",
-                     "                ||----w |",
-                     "                ||     ||"
+    
+    // Put split quote into speech bubble
+    var asciiQuoteStart =   " ________________________________";
+    var asciiQuoteEnd = " -------------------------------- ";
+    var asciiBubble = [];
+    var bubble = "";
+    
+    
+    if(quoteSentenceArray.length === 1) {
+        while(quoteSentenceArray[0].length < 31) {
+            quoteSentenceArray[0] = quoteSentenceArray[0] + " ";
+        }
+        bubble =  asciiQuoteStart + "\n< " + quoteSentenceArray[0] + " >" + "\n" + asciiQuoteEnd + "\n";
+    }
+    else {
+        for(var i=0; i<quoteSentenceArray.length; i++ ) {
+            while(quoteSentenceArray[i].length < 31) { // pad all strings
+                quoteSentenceArray[i] = quoteSentenceArray[i] + " ";
+            }
+            if(i===0) { // first line
+                quoteSentenceArray[i] = "/ " + quoteSentenceArray[i] + "\\";
+            }
+            else if(i===quoteSentenceArray.length-1) { //last line
+                quoteSentenceArray[i] = "\\ " + quoteSentenceArray[i] + "/";                
+            }
+            else {
+                quoteSentenceArray[i] = "| " + quoteSentenceArray[i] + "|";                  
+            }
+            asciiBubble.push(quoteSentenceArray[i]);
+        }
+        
+        bubble = asciiQuoteStart + "\n" + asciiBubble.join("\n") + "\n" + asciiQuoteEnd +"\n";
+    }
+    
+    // Create ascii cow
+    var asciiCow =["        \\   ^__^",
+                   "         \\  (oo)\\_______",
+                    "            (__)\\       )\\/\\ ",
+                    "                ||----w |",
+                    "                ||     ||"
                 ];
-    return quoteSentenceArray.join("\n") + "\n" + asciiCow.join("\n");
+    return bubble + asciiCow.join("\n");
 }
 
 function randomQuote(randNum) { // Generate random quote
