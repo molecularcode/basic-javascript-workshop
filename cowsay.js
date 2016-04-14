@@ -30,34 +30,30 @@ function cowSay(randQuote) {
     var asciiQuoteEnd = " -------------------------------- ";
     var asciiBubble = [];
     var bubble = "";
-    
-    
-    if(quoteSentenceArray.length === 1) {
-        while(quoteSentenceArray[0].length < 31) {
-            quoteSentenceArray[0] = quoteSentenceArray[0] + " ";
+
+    for (var i = 0; i < quoteSentenceArray.length; i++) {
+        while (quoteSentenceArray[i].length < 31) { // pad all strings
+            quoteSentenceArray[i] = quoteSentenceArray[i] + " ";
         }
-        bubble =  asciiQuoteStart + "\n< " + quoteSentenceArray[0] + " >" + "\n" + asciiQuoteEnd + "\n";
+        if (i === 0) { // first line
+            quoteSentenceArray[i] = "/ " + quoteSentenceArray[i] + "\\";
+        }
+        else if (i === quoteSentenceArray.length - 1) { //last line
+            quoteSentenceArray[i] = "\\ " + quoteSentenceArray[i] + "/";
+        }
+        else {
+            quoteSentenceArray[i] = "| " + quoteSentenceArray[i] + "|";
+        }
+        asciiBubble.push(quoteSentenceArray[i]);
+    }
+
+    if (quoteSentenceArray.length === 1) {
+        bubble = asciiQuoteStart + "\n< " + quoteSentenceArray[0] + " >" + "\n" + asciiQuoteEnd + "\n";
     }
     else {
-        for(var i=0; i<quoteSentenceArray.length; i++ ) {
-            while(quoteSentenceArray[i].length < 31) { // pad all strings
-                quoteSentenceArray[i] = quoteSentenceArray[i] + " ";
-            }
-            if(i===0) { // first line
-                quoteSentenceArray[i] = "/ " + quoteSentenceArray[i] + "\\";
-            }
-            else if(i===quoteSentenceArray.length-1) { //last line
-                quoteSentenceArray[i] = "\\ " + quoteSentenceArray[i] + "/";                
-            }
-            else {
-                quoteSentenceArray[i] = "| " + quoteSentenceArray[i] + "|";                  
-            }
-            asciiBubble.push(quoteSentenceArray[i]);
-        }
-        
-        bubble = asciiQuoteStart + "\n" + asciiBubble.join("\n") + "\n" + asciiQuoteEnd +"\n";
+        bubble = asciiQuoteStart + "\n" + asciiBubble.join("\n") + "\n" + asciiQuoteEnd + "\n";
     }
-    
+        
     // Create ascii cow
     var asciiCow =["        \\   ^__^",
                    "         \\  (oo)\\_______",
