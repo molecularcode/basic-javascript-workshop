@@ -100,8 +100,12 @@ function stringLoop(num, string) {
     /* when passed something other than a variable of type number followed by a variable of type string, the user is prompted to enter a number followed by a string */
     if(typeof num === "number" && typeof string === "string") {
         var i = 0;
+        // feedback - moved var declaration here so it's only declared once
+        var loop = (string + "\n" + loop);
+        
         while(i < num ) {
-            var loop = (string + "\n" + loop);
+            // feedback - don't re-declare var each time it loops, just declare once
+            // var loop = (string + "\n" + loop);
             i ++;
         }
         return(loop);
