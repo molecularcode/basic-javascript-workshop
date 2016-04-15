@@ -5,10 +5,10 @@
 
 function firstChar(string) {
     if(string) {
-        return(string.charAt(0));
+        return string.charAt(0);
     }
     else {
-        return("enter a string");
+        return "enter a string" ;
     }
 };
 //console.log(firstChar("Fred"));
@@ -18,10 +18,10 @@ function firstChar(string) {
 
 function lastChar(string) {
     if(string) {
-        return(string.slice(-1));
+        return string.slice(-1);
     }
     else {
-        return("enter a string");
+        return "enter a string";
     }
 };
 //console.log(lastChar("Albert"));
@@ -31,10 +31,10 @@ function lastChar(string) {
 
 function numberedChar(string, num) {
     if(string && num <= string.length - 1) {
-        return(string.charAt(num));
+        return string.charAt(num);
     }
     else {
-        return("enter a string and a smaller number");
+        return "enter a string and a smaller number";
     }
 };
 //console.log(numberedChar("George", 4 ));
@@ -44,10 +44,10 @@ function numberedChar(string, num) {
 
 function add(num1, num2) {
     if(typeof num1 === "number" && typeof num2 === "number") { // when passed something other than type number, the user is prompted to enter 2 numbers
-        return(num1 + num2);
+        return num1 + num2;
     }
     else {
-        return("enter two numbers");
+        return "enter two numbers";
     }
 };
 //console.log(add("greoge", 4));
@@ -57,10 +57,10 @@ function add(num1, num2) {
 
 function multiply(num1, num2) {
     if(typeof num1 === "number" && typeof num2 === "number") { // when passed something other than 2 variables of type number, the user is prompted to enter 2 numbers
-        return(num1 * num2);
+        return num1 * num2;
     }
     else {
-        return("enter two numbers");
+        return "enter two numbers";
     }
 };
 //console.log(multiply(5, 8));
@@ -72,23 +72,23 @@ function math(num1, num2, opperator) {
     /* when passed something other than 2 variables of type number followed by a variable of type string, the user is prompted to enter 2 numbers followed by the opperator */
     if(typeof num1 === "number" && typeof num2 === "number" && typeof opperator === "string") {
         if(opperator === "add") {
-            return(num1 + num2);   
+            return num1 + num2;   
         }
         else if(opperator === "subtract") {
-            return(num1 - num2);   
+            return num1 - num2;   
         }
         else if(opperator === "mult") {
-            return(num1 * num2);   
+            return num1 * num2;   
         }
         else if(opperator === "div") {
-            return(num1 / num2);   
+            return num1 / num2;   
         }
         else {
-            return("0 - enter the opperator as one of: add, subtract, mult, div");
+            return "0 - enter the opperator as one of: add, subtract, mult, div";
         }
     }
     else {
-        return("enter two numbers followed by the opperator (add, subtract, mult, div) as csv");
+        return"enter two numbers followed by the opperator (add, subtract, mult, div) as csv";
     }
 };
 //console.log(math(12, 4, "mult"));
@@ -108,10 +108,10 @@ function stringLoop(num, string) {
             // var loop = (string + "\n" + loop);
             i ++;
         }
-        return(loop);
+        return loop;
     }
     else {
-        return("enter a number followed by a string as csv");
+        return "enter a number followed by a string as csv";
     }
 }
 //console.log(stringLoop(2, "Oh Happy Days!"));
@@ -125,7 +125,7 @@ function reverse(sentence) {
         return sentence.split(" ").reverse().join(" ");
     }
     else {
-        return("enter a string");
+        return "enter a string";
     }
 }
 //console.log(reverse("It is a good day to have a good day"));
@@ -140,10 +140,10 @@ function factorial(num) {
         for(var i = num; i > 1; i--) {
             runningTotal = runningTotal*(i-1)
         }
-        return(runningTotal);
+        return runningTotal;
     }
     else {
-        return("enter a number");
+        return "enter a number";
     }
 }
 //console.log(factorial(5));
@@ -166,7 +166,7 @@ function length(phrase) {
         return longest;
     }
     else {
-        return("enter a phrase");
+        return "enter a phrase";
     }
 }
 //console.log(length("It is a good day to have a really good day"));
@@ -187,7 +187,7 @@ function capitalisation(phrase) {
         return wordArray.join(" ");
     }
     else {
-        return("enter a phrase");
+        return "enter a phrase";
     }
 }
 //console.log(capitalisation("It IS a gOOd day to have rEally good day"));
@@ -213,7 +213,7 @@ function largestNum(myArray) {
         return largest;
     }
     else {
-        return("pass in an array");
+        return "pass in an array";
     }
 }
 
@@ -229,7 +229,7 @@ function isTruthy(myArray) {
         return truthyArray;
     }
     else {
-        return("pass in an array");
+        return "pass in an array";
     }
 }
 
@@ -251,7 +251,7 @@ function sumArrayNumbers(myArray) {
         return sum;
     }
     else {
-        return("pass in an array");
+        return "pass in an array";
     }
 }
 
