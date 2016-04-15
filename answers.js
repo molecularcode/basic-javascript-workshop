@@ -198,7 +198,10 @@ function capitalisation(phrase) {
 function largestNum(myArray) {
     /* when passed something other than a variable of type array, the user is prompted to enter a valid array */
     if(Array.isArray(myArray)) {
-        var largest = " ";
+        
+        // feedback - a good value for starting the comparison here would be -Infinity
+        //var largest = " ";
+        var largest = -Infinity;
         for(var i = 0; i < myArray.length; i++) {
             if(typeof myArray[i] === "number") { // check if element is a number
                 var current = (myArray[i]); // set value of current to each numeric element in the array
